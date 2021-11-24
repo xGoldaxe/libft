@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.test.c                                  :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 14:44:52 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/23 15:00:12 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/24 14:41:55 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/24 16:14:23 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "stdlib.h"
 
-int	ft_isdigit(int c);
-
-int	main(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	printf("%d\n", ft_isdigit(310) > 0);
-	printf("%d\n", isdigit(310) == 0);
-	printf("%d\n", ft_isdigit('2') > 0);
-	printf("%d\n", isdigit('2') > 0);
+	unsigned char	*f;
+	size_t			i;
+
+	f = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (f[i] == (unsigned char)c)
+		{
+			return ((unsigned char *)s + i);
+		}
+		i++;
+	}
+	return (NULL);
 }

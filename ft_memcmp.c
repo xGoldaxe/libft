@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.test.c                                  :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 14:44:52 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/23 16:26:25 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/24 14:56:49 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/24 15:39:25 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_isalnum(int c);
-
-int	main(void)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	printf("%d\n", ft_isalnum('.') == 0);
-	printf("%d\n", isalnum('.') == 0);
-	printf("%d\n", ft_isalnum('A') > 0);
-	printf("%d\n", isalnum('A') > 0);
-	printf("%d\n", ft_isalnum('z') > 0);
-	printf("%d\n", isalnum('z') > 0);
+	size_t			i;
+	unsigned char	*a;
+	unsigned char	*b;
+
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (a[i] != b[i])
+			return (a[i] - b[i]);
+		i++;
+	}
+	return (0);
 }

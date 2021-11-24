@@ -6,12 +6,12 @@
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:21:01 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/23 14:21:03 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:44:01 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_islower(char c);
-int	ft_isupper(char c);
+int	ft_islower(int c);
+int	ft_isupper(int c);
 
 int	ft_isalpha(int c)
 {

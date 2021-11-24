@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.test.c                                  :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 14:44:52 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/23 15:11:16 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/24 18:25:23 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/24 18:28:55 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "stdlib.h"
 
-int	ft_isascii(char c);
-
-int	main(void)
+size_t	ft_strnlen(const char *str, size_t size)
 {
-	printf("%d\n", ft_isascii(-5) == 0);
-	printf("%d\n", isascii(-5) == 0);
-	printf("%d\n", isascii(128) == 0);
-	printf("%d\n", ft_isascii(128) == 0);
-	printf("%d\n", ft_isascii(40) > 0);
-	printf("%d\n", isascii(40) > 0);
+	size_t	i;
 
-	printf("%d\n", ft_isascii('A') > 0);
-	printf("%d\n", isascii('A') > 0);
+	i = 0;
+	while (str[i] != '\0' && i < size)
+		i++;
+	return (i);
 }

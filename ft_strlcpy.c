@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.test.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 14:10:37 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/23 14:20:38 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/24 15:07:21 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/24 18:55:38 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_isalpha(char c);
-
-int	main(void)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	printf("%d\n", ft_isalpha('a') == 1);
-	printf("%d\n", ft_isalpha('W') == 1);
-	printf("%d\n", ft_isalpha('Z') == 1);
-	printf("%d\n", ft_isalpha('5') == 0);
-	printf("%d\n", ft_isalpha('/') == 0);
-	printf("%d\n", ft_isalpha('\n') == 0);
+	size_t	i;
+
+	i = 0;
+	if (size == 0)
+		return (0);
+	while (i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (size);
 }
