@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:41:55 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/24 16:14:23 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:10:28 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (f[i] == (unsigned char)c)
-		{
 			return ((unsigned char *)s + i);
-		}
 		i++;
 	}
 	return (NULL);

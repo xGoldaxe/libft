@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 14:11:57 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/26 15:52:21 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/25 23:16:06 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/25 23:27:15 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_strreverse(char *str)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	unsigned int	i;
+	unsigned int	y;
+	char			tmp;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (dst == NULL && src == NULL)
-		return (dst);
-	if (s < d)
+	i = ft_strlen(str);
+	y = 0;
+	while (y < i)
 	{
-		while (len > 0)
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
-		return (dst);
+		tmp = str[y];
+		str[y] = str[1];
+		str[i - y - 1] = tmp;
+		y++;
 	}
-	i = 0;
-	while (i < len)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dst);
 }

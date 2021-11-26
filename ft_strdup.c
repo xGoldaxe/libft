@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 14:11:57 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/26 15:52:21 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/25 17:18:30 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/25 17:24:02 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strdup(const char *s)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	char	*newstr;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (dst == NULL && src == NULL)
-		return (dst);
-	if (s < d)
-	{
-		while (len > 0)
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
-		return (dst);
-	}
-	i = 0;
-	while (i < len)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dst);
+	newstr = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (newstr == NULL)
+		return (NULL);
+	ft_strlcpy(newstr, s, ft_strlen(s) + 1);
+	return (newstr);
 }

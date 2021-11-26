@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 14:08:06 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/23 16:24:45 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/26 17:10:33 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/26 17:23:51 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_islower(int c)
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
-	return (c >= 97 && c <= 122);
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
