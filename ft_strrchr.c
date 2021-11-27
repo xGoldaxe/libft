@@ -6,7 +6,7 @@
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:22:08 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/25 14:13:33 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:21:49 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ char	*ft_strrchr(const char *s, int c)
 {
 	unsigned int	i;
 	char			*str;
+	unsigned char	cc;
 
+	cc = (unsigned char) c;
 	str = (char *)s;
 	i = ft_strlen(s);
 	while (i > 0)
 	{
-		if (str[i] == c)
+		if (str[i] == cc)
 			return (str += i);
 		i--;
 	}
-	if (*str == c)
+	if (*str == cc)
 		return (str);
 	return (0);
 }

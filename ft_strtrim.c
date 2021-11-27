@@ -6,11 +6,25 @@
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 22:36:22 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/26 17:23:13 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/27 13:43:45 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_include(char c, char const *elts)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (elts[i])
+	{
+		if (elts[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 char	*ft_build_strtrim(char const *s1, char const *set,
 unsigned int i, unsigned int y)

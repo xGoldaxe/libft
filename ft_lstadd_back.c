@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_include.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 22:48:46 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/25 22:52:39 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/26 21:35:43 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/27 12:39:23 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_include(char c, char const *elts)
-{
-	unsigned int	i;
+#include "libft.h"
 
-	i = 0;
-	while (elts[i])
+void	ft_lstadd_back(t_list **alst, t_list *new)
+{
+	t_list	*tmp;
+
+	if (alst)
 	{
-		if (elts[i] == c)
-			return (1);
-		i++;
+		if (!*alst)
+		{
+			*alst = new;
+			return ;
+		}
+		tmp = ft_lstlast(*alst);
+		tmp->next = new;
 	}
-	return (0);
 }

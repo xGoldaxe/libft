@@ -6,7 +6,7 @@
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:50:09 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/25 15:53:47 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:28:25 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		if (haystack[i] == *needle)
 		{
-			printf("%zu, %zu\n", i, ft_strlen(needle));
 			if ((i + ft_strlen(needle)) <= len)
 			{
 				if (ft_strncmp(&haystack[i], needle, ft_strlen(needle)) == 0)

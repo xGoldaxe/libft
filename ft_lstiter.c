@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 18:25:23 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/24 18:28:55 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/27 12:01:35 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/27 12:11:38 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
+#include "libft.h"
 
-size_t	ft_strnlen(const char *str, size_t size)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0' && i < size)
-		i++;
-	return (i);
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
 }

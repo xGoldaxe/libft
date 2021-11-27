@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:37:11 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/24 16:57:11 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:23:33 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 15:03:29 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/25 15:06:13 by pleveque         ###   ########.fr       */
+/*   Created: 2021/11/26 21:21:46 by pleveque          #+#    #+#             */
+/*   Updated: 2021/11/26 21:29:55 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(char c)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
-	return (c == '\t' || c == '\n' || c == '\v'
-		|| c == '\f' || c == '\r' || c == ' ');
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:16:41 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/26 17:28:37 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:50:44 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*storeword(char *dst, char const *s, char c)
 	unsigned int	i;
 
 	len = 0;
-	while (s[len] != c)
+	while (s[len] && s[len] != c)
 		len++;
 	dst = malloc(sizeof(char) * (len + 1));
 	if (!dst)
@@ -60,6 +60,8 @@ static void	freewords(char **arr, unsigned int len)
 {
 	unsigned int	i;
 
+	if (len < 1)
+		return ;
 	i = 0;
 	while (i < len)
 	{

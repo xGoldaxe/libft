@@ -6,7 +6,7 @@
 /*   By: pleveque <pleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:49:02 by pleveque          #+#    #+#             */
-/*   Updated: 2021/11/26 16:59:50 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:56:03 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ static int	str_to_int_base(const char *str, int size, char *base)
 		i++;
 	}
 	return (result);
+}
+
+static int	ft_isspace(char c)
+{
+	return (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ');
 }
 
 int	ft_atoi(const char *nptr)
